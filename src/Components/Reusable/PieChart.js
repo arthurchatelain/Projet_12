@@ -1,3 +1,5 @@
+// This pie chart function return an svg element that correspond to our needs
+
 export default function PieChart (props) {
     const percentage = props.percentage
     const strokeWidth = 10

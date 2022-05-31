@@ -4,6 +4,7 @@ import './Style/index.css';
 import Dashboard from './Components/Dashboard';
 import SideIcons from './Components/Reusable/SideIcons'
 
+// this is the id we will with the api
 const id = 12
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -4,10 +4,17 @@ import callApi from '../API/callApi'
 import '../Style/DailyActivity.css'
 
 export default function DailyActivity (props) {
+
+    // API call 
     const [dataActivity, setdataActivity] = useState('vide')
     useEffect(() => {callApi(props.id, '/activity').then(i => setdataActivity(i.sessions))}, [])
+
+    // So we dont return with void data
     if (dataActivity !== 'vide') {
+
+        // just keep the day and month
         dataActivity.forEach(item => item.day = item.day.slice(-5))
+        
         return (
             <section className='dailyActivity'>
                 <p className="dailytitre">Activité quotidienne</p>

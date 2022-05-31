@@ -1,3 +1,5 @@
+// This function choose the appropriate Icon
+
 export default function NutrIcon(type) {
     switch (type) {
         case 'calorie':

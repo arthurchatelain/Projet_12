@@ -4,9 +4,15 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from "r
 import '../Style/Performance.css'
 
 export default function Performance (props) {
+
+    // API call
     const [dataPerformance, setdataPerformance] = useState('vide')
     useEffect(() => {callApi(props.id, '/performance').then(i => setdataPerformance(i))}, [])
+
+    // So we dont return with void data
     if (dataPerformance !== 'vide') {
+
+        // Adding the kind of the datas
         let data = dataPerformance.data
         for (let i = 0; i < data.length; i++) data[i].kind = dataPerformance.kind[i + 1]
         return (

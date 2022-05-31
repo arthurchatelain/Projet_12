@@ -1,3 +1,5 @@
+// This function return the four icons of the sidebar
+
 export default function SideIcons() {
     return (
         <div className="SideIcons">

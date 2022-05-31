@@ -4,8 +4,12 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "r
 import '../Style/SessionDuration.css'
 
 export default function SectionDuration (props) {
+
+    // API call
     const [datadDuration, setdatadDuration] = useState('vide')
     useEffect(() => {callApi(props.id, '/average-sessions').then(i => setdatadDuration(i.sessions))}, [])
+
+    // So we dont return with void data
     if (datadDuration !== 'vide') {
         datadDuration.forEach(item => {
             switch(item.day.toString()) {

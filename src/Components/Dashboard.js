@@ -8,8 +8,12 @@ import SessionDuration from './SessionDuration';
 import Nutriment from './Nutriment';
 
 export default function Dashboard (props) {
+
+    // API call
     const [userName, setName] = useState('Visiteur')
     useEffect(() => {callApi(props.id).then(i => setName(i.userInfos.firstName))}, [])
+
+    // So we dont return with void data
     if (userName !== 'Visiteur') {
         return (
             <div className='dashboard'>
@@ -20,6 +24,8 @@ export default function Dashboard (props) {
                 <div className='dashboardBody'>
                     <section className='dashboardLeft'>
                         <DailyActivity id={props.id}/>
+
+                        {/* Bottom left */}
                         <section className='dashboardBottom'>
                             <SessionDuration id={props.id}/>
                             <Performance id={props.id}/>

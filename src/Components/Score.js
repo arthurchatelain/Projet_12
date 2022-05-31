@@ -4,6 +4,8 @@ import PieChart from './Reusable/PieChart'
 import '../Style/Score.css'
 
 export default function Score (props) {
+
+    // API call
     const [percentage, setpercentage] = useState(0)
     useEffect(() => {callApi(props.id).then(i => setpercentage((i.todayScore || i.score) * 100))}, [])
     return (

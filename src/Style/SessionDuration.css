@@ -1,0 +1,32 @@
+.sessionDuration {
+    margin-top: 80px;
+    padding: 60px 12px 12px 12px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #FF0000;
+    width: fit-content;
+}
+
+.sessionDuration .p {
+    position: absolute;
+    top: 18px;
+    width: 200px;
+    padding-left: 15px;
+    color: white;
+}
+
+.sessionDuration .recharts-tooltip-label {
+    color: red;
+    text-align: center;
+    margin: 0px 15px;
+}
+
+.sessionDuration .recharts-tooltip-item-list {
+    display: none;
+}
+
+.sessionDuration .recharts-tooltip-wrapper p {
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+}

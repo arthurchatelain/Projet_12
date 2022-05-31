@@ -1,0 +1,18 @@
+.performance {
+    margin: 0px 30px;
+    margin-top: 80px;
+    background-color: #282D30;
+    border-radius: 10px;
+}
+
+.performance .recharts-polar-grid-angle {
+    display: none;
+}
+
+.performance line.angleAxis {
+    display: none;
+}
+
+.performance .recharts-polar-angle-axis-tick tspan {
+    font-size: 11px;
+}

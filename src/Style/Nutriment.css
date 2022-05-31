@@ -1,0 +1,25 @@
+.nutrits {
+    background-color: #FBFBFB;
+    padding: 32px;
+    width: 194px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nutrits .text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+}
+
+.nutrits .text .quantity {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nutrits .text .nutriment {
+    font-weight: 500;
+    font-size: 14px;
+}

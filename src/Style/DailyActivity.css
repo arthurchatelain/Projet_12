@@ -1,0 +1,21 @@
+.dailyActivity {
+    background-color: #FBFBFB;
+    padding: 25px 8px 25px 40px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.dailytitre {
+    position: absolute;
+    top: 31px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.recharts-legend-item {
+    margin-left: 20px;
+}
+
+.recharts-default-legend {
+    margin-right: 15px;
+}

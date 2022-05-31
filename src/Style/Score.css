@@ -1,0 +1,19 @@
+.score {
+    margin-top: 80px;
+    width: 258px;
+    height: 263px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+    position: relative;
+}
+
+.score h1 {
+    font-size: 17px;
+    font-weight: 500;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}

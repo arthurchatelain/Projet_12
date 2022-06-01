@@ -6,12 +6,17 @@ import Performance from './Performance';
 import Score from './Score'
 import SessionDuration from './SessionDuration';
 import Nutriment from './Nutriment';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard (props) {
 
-    // API call
+    // API call + validation de l'id 
+    let navigate = useNavigate()
     const [userName, setName] = useState('Visiteur')
-    useEffect(() => {callApi(props.id).then(i => setName(i.userInfos.firstName))}, [])
+    useEffect(() => {callApi(props.id).then(i => {
+        if (i === undefined) navigate('/')
+        else setName(i.userInfos.firstName) 
+    })}, [])
 
     // So we dont return with void data
     if (userName !== 'Visiteur') {

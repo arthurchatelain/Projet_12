@@ -1,30 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Style/index.css';
-import Dashboard from './Components/Dashboard';
-import SideIcons from './Components/Reusable/SideIcons'
-
-// this is the id we will with the api
-const id = 12
+import App from './App';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Erreur from './Erreur';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="App">
-      <header className="header">
-        <img src='https://user.oc-static.com/upload/2020/08/18/15977560509272_logo%20%285%29.png' alt='logo' className='headerLinks'/>
-        <p className='headerLinks'>Accueil</p>
-        <p className='headerLinks'>Profil</p>
-        <p className='headerLinks'>Réglage</p>
-        <p className='headerLinks'>Communauté</p>
-      </header>
-      <div className='body'>
-        <section className='Sidebar'>
-          <SideIcons />
-          <div className='SideTextContainer'><p className='SideText'>Copiryght, SportSee 2020</p></div>
-        </section>
-        <Dashboard id={id}/>
-      </div>    
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/:id' element={<App />}/>
+        <Route path='*' element={<Erreur />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

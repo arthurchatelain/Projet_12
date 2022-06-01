@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 import '../Style/SessionDuration.css'
 
 export default function SectionDuration (props) {

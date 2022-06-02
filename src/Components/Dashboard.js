@@ -14,7 +14,7 @@ export default function Dashboard (props) {
     let navigate = useNavigate()
     const [userName, setName] = useState('Visiteur')
     useEffect(() => {callApi(props.id).then(i => {
-        if (i === undefined) navigate('/')
+        if (i === undefined || i === false) navigate('/')
         else setName(i.userInfos.firstName) 
     })}, [])
 

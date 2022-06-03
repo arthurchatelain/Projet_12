@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 import '../Style/SessionDuration.css'
+import PropTypes from 'prop-types'
 
 /**
  * Return the Average duration of sessions graph.
@@ -63,4 +64,8 @@ export default function SessionDuration (props) {
             </section>
         )
     }
+}
+
+SessionDuration.propTypes = {
+    id: PropTypes.number.isRequired
 }

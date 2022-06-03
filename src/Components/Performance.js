@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from "recharts";
 import '../Style/Performance.css'
+import PropTypes from 'prop-types'
 
 /**
  * Return the performance graph.
@@ -33,4 +34,8 @@ export default function Performance (props) {
             </section>
         )
     }
+}
+
+Performance.propTypes = {
+    id: PropTypes.number.isRequired
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
 import PieChart from './Reusable/PieChart'
 import '../Style/Score.css'
+import PropTypes from 'prop-types'
 
 /**
  * Return the Score graph.
@@ -22,4 +23,9 @@ export default function Score (props) {
             <PieChart percentage={percentage} />
         </section>
     );
+}
+
+Score.propTypes = {
+    id: PropTypes.number.isRequired,
+    percentage: PropTypes.number.isRequired
 }

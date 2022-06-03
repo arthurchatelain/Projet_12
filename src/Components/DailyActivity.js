@@ -2,6 +2,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "rec
 import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
 import '../Style/DailyActivity.css'
+import PropTypes from 'prop-types'
 
 /**
  * Return the daily activity graph component.
@@ -37,4 +38,8 @@ export default function DailyActivity (props) {
             </section>
         )
     }
+}
+
+DailyActivity.propTypes = {
+    id: PropTypes.number.isRequired
 }

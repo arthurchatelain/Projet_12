@@ -2,6 +2,7 @@ import callApi from "../API/callApi";
 import React, { useState, useEffect} from 'react'
 import NutrIcon from "./Reusable/NutrIcon";
 import '../Style/Nutriment.css'
+import PropTypes from 'prop-types'
 
 /**
  * Return a nutriment component.
@@ -34,4 +35,11 @@ export default function Nutriment (props) {
             </div>
         )
     }
+}
+
+Nutriment.propTypes = {
+    id: PropTypes.number.isRequired,
+    call: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    unit: PropTypes.string.isRequired
 }

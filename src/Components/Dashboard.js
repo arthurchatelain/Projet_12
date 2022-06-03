@@ -7,6 +7,7 @@ import Score from './Score'
 import SessionDuration from './SessionDuration';
 import Nutriment from './Nutriment';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 /**
  * Return the Dashboard with all the graphics.
@@ -56,4 +57,8 @@ export default function Dashboard (props) {
             </div>
         ) 
     }
+}
+
+Dashboard.propTypes = {
+    id: PropTypes.number.isRequired
 }

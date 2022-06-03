@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 /**
  * Return an svg PieChart.
  * @const {number} percentage - The percentage the PieChart will be fill with
@@ -19,4 +21,8 @@ export default function PieChart (props) {
             <text fill="black" fontWeight={500} fontSize="15px" x="50%" y="50%" dy={20} textAnchor="middle" >de votre objectif</text>
         </svg>
     )
+}
+
+PieChart.propTypes = {
+    percentage: PropTypes.number.isRequired
 }

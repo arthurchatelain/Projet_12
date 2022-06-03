@@ -14,7 +14,7 @@ export default function Performance (props) {
 
     // API call
     const [dataPerformance, setdataPerformance] = useState('vide')
-    useEffect(() => {callApi(props.id, '/performance').then(i => setdataPerformance(i))}, [])
+    useEffect(() => {callApi(props.id, '/performance', props.needMock).then(i => setdataPerformance(i))}, [])
 
     // So we dont return with void data
     if (dataPerformance !== 'vide') {

@@ -1,12 +1,11 @@
 import '../Style/Dashboard.css'
 import React, { useState, useEffect } from 'react'
 import callApi from '../API/callApi'
-import DailyActivity from './DailyActivity';
-import Performance from './Performance';
+import DailyActivity from './DailyActivity'
+import Performance from './Performance'
 import Score from './Score'
-import SessionDuration from './SessionDuration';
-import Nutriment from './Nutriment';
-import { useNavigate } from 'react-router-dom';
+import SessionDuration from './SessionDuration'
+import Nutriment from './Nutriment'
 import PropTypes from 'prop-types'
 
 /**
@@ -18,15 +17,8 @@ import PropTypes from 'prop-types'
 export default function Dashboard (props) {
 
     // API call + validation de l'id 
-    let navigate = useNavigate()
     const [userName, setName] = useState('Visiteur')
-    useEffect(() => {callApi(props.id).then(i => {
-
-        // Handle API errors
-        if (i === undefined || i === false) navigate('/')
-
-        else setName(i.userInfos.firstName) 
-    })}, [])
+    useEffect(() => {callApi(props.id, '', props.needMock).then(i => {setName(i.userInfos.firstName) })}, [])
 
     // So we dont return with void data
     if (userName !== 'Visiteur') {
@@ -38,20 +30,20 @@ export default function Dashboard (props) {
                 </div>
                 <div className='dashboardBody'>
                     <section className='dashboardLeft'>
-                        <DailyActivity id={props.id}/>
+                        <DailyActivity id={props.id} needMock={props.needMock}/>
 
                         {/* Bottom left */}
                         <section className='dashboardBottom'>
-                            <SessionDuration id={props.id}/>
-                            <Performance id={props.id}/>
-                            <Score id={props.id}/>
+                            <SessionDuration id={props.id} needMock={props.needMock}/>
+                            <Performance id={props.id} needMock={props.needMock}/>
+                            <Score id={props.id} needMock={props.needMock}/>
                         </section>
                     </section>
                     <section className='dashboardRight'>
-                        <Nutriment id={props.id} call='calorie' name="Calories" unit="kCal"/>
-                        <Nutriment id={props.id} call='protein' name="Protéines" unit="g"/>
-                        <Nutriment id={props.id} call='carbohydrate' name="Glucides" unit="g"/>
-                        <Nutriment id={props.id} call='lipid' name="Lipides" unit="g"/>
+                        <Nutriment id={props.id} needMock={props.needMock} call='calorie' name="Calories" unit="kCal"/>
+                        <Nutriment id={props.id} needMock={props.needMock} call='protein' name="Protéines" unit="g"/>
+                        <Nutriment id={props.id} needMock={props.needMock} call='carbohydrate' name="Glucides" unit="g"/>
+                        <Nutriment id={props.id} needMock={props.needMock} call='lipid' name="Lipides" unit="g"/>
                     </section>
                 </div>
             </div>

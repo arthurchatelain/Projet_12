@@ -18,7 +18,7 @@ export default function Nutriment (props) {
 
     // API call
     const [data, setdata] = useState('vide')
-    useEffect(() => {callApi(props.id).then(i => setdata(i.keyData[props.call + 'Count']))}, [])
+    useEffect(() => {callApi(props.id, '', props.needMock).then(i => setdata(i.keyData[props.call + 'Count']))}, [])
 
     // So we dont return with void data
     if (data !== 'vide') {

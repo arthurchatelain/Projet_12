@@ -14,7 +14,7 @@ export default function Score (props) {
 
     // API call
     const [percentage, setpercentage] = useState(0)
-    useEffect(() => {callApi(props.id).then(i => setpercentage((i.todayScore || i.score) * 100))}, [])
+    useEffect(() => {callApi(props.id, '', props.needMock).then(i => setpercentage((i.todayScore || i.score) * 100))}, [])
 
     // return the component
     return (
@@ -27,5 +27,4 @@ export default function Score (props) {
 
 Score.propTypes = {
     id: PropTypes.number.isRequired,
-    percentage: PropTypes.number.isRequired
 }

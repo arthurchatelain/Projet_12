@@ -14,7 +14,7 @@ export default function DailyActivity (props) {
 
     // API call 
     const [dataActivity, setdataActivity] = useState('vide')
-    useEffect(() => {callApi(props.id, '/activity').then(i => setdataActivity(i.sessions))}, [])
+    useEffect(() => {callApi(props.id, '/activity', props.needMock).then(i => setdataActivity(i.sessions))}, [])
 
     // So we dont return with void data
     if (dataActivity !== 'vide') {

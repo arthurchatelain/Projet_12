@@ -14,7 +14,7 @@ export default function SessionDuration (props) {
 
     // API call
     const [dataDuration, setdataDuration] = useState('vide')
-    useEffect(() => {callApi(props.id, '/average-sessions').then(i => setdataDuration(i.sessions))}, [])
+    useEffect(() => {callApi(props.id, '/average-sessions', props.needMock).then(i => setdataDuration(i.sessions))}, [])
 
     // So we dont return with void data
     if (dataDuration !== 'vide') {

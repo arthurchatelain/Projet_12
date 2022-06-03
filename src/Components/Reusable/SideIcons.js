@@ -1,4 +1,6 @@
-// This function return the four icons of the sidebar
+/**
+ * Return the sidebar's icons.
+ */
 
 export default function SideIcons() {
     return (

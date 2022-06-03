@@ -8,13 +8,22 @@ import SessionDuration from './SessionDuration';
 import Nutriment from './Nutriment';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Return the Dashboard with all the graphics.
+ * @param {number} props.id - the id of the user
+ * @const {string} userName - The name the user ( from the api )
+ */
+
 export default function Dashboard (props) {
 
     // API call + validation de l'id 
     let navigate = useNavigate()
     const [userName, setName] = useState('Visiteur')
     useEffect(() => {callApi(props.id).then(i => {
+
+        // Handle API errors
         if (i === undefined || i === false) navigate('/')
+
         else setName(i.userInfos.firstName) 
     })}, [])
 

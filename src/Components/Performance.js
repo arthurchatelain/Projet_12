@@ -3,6 +3,12 @@ import callApi from '../API/callApi'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from "recharts";
 import '../Style/Performance.css'
 
+/**
+ * Return the performance graph.
+ * @param {number} props.id - the id of the user
+ * @const {object} dataPerformance - The performance of the user
+ */
+
 export default function Performance (props) {
 
     // API call
@@ -15,6 +21,8 @@ export default function Performance (props) {
         // Adding the kind of the datas
         let data = dataPerformance.data
         for (let i = 0; i < data.length; i++) data[i].kind = dataPerformance.kind[i + 1]
+
+        // return the component
         return (
             <section className='performance'>
                 <RadarChart outerRadius={75} width={258} height={263} data={data}>

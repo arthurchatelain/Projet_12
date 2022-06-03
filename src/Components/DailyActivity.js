@@ -3,6 +3,12 @@ import React, { useState, useEffect} from 'react'
 import callApi from '../API/callApi'
 import '../Style/DailyActivity.css'
 
+/**
+ * Return the daily activity graph component.
+ * @param {number} props.id - the id of the user
+ * @const {object} dataActivity - This object contain the daily acitivity data of the user
+ */
+
 export default function DailyActivity (props) {
 
     // API call 
@@ -15,6 +21,7 @@ export default function DailyActivity (props) {
         // just keep the day and month
         dataActivity.forEach(item => item.day = item.day.slice(-5))
         
+        // return the component
         return (
             <section className='dailyActivity'>
                 <p className="dailytitre">Activité quotidienne</p>

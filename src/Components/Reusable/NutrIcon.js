@@ -1,4 +1,7 @@
-// This function choose the appropriate Icon
+/**
+ * Return an svg icon.
+ * @param {string} type - The type of the icon.
+ */
 
 export default function NutrIcon(type) {
     switch (type) {

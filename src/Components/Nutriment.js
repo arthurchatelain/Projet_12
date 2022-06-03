@@ -3,6 +3,16 @@ import React, { useState, useEffect} from 'react'
 import NutrIcon from "./Reusable/NutrIcon";
 import '../Style/Nutriment.css'
 
+/**
+ * Return a nutriment component.
+ * @param {number} props.id - the id of the user
+ * @param {string} props.call - the callname of the nutriment
+ * @param {string} props.unit - the unit of the nutriment
+ * @param {string} props.name - the name of the nutriment
+ * @const {number} data - the quantity of that nutriment
+ */
+
+
 export default function Nutriment (props) {
 
     // API call

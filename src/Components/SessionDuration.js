@@ -3,15 +3,23 @@ import callApi from '../API/callApi'
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 import '../Style/SessionDuration.css'
 
-export default function SectionDuration (props) {
+/**
+ * Return the Average duration of sessions graph.
+ * @param {number} props.id - the id of the user
+ * @const {object} dataDuration - The duration of the sessions over a week
+ */
+
+export default function SessionDuration (props) {
 
     // API call
-    const [datadDuration, setdatadDuration] = useState('vide')
-    useEffect(() => {callApi(props.id, '/average-sessions').then(i => setdatadDuration(i.sessions))}, [])
+    const [dataDuration, setdataDuration] = useState('vide')
+    useEffect(() => {callApi(props.id, '/average-sessions').then(i => setdataDuration(i.sessions))}, [])
 
     // So we dont return with void data
-    if (datadDuration !== 'vide') {
-        datadDuration.forEach(item => {
+    if (dataDuration !== 'vide') {
+
+        // We replace number day by letter day
+        dataDuration.forEach(item => {
             switch(item.day.toString()) {
                 case '1':
                     item.day = 'L'
@@ -36,10 +44,12 @@ export default function SectionDuration (props) {
                     break
             }
         })
+
+        // Return the component
         return (
             <section className='sessionDuration'>
                 <p className='p'>Durée moyenne des sessions</p>
-                <LineChart width={234} height={191} data={datadDuration}>
+                <LineChart width={234} height={191} data={dataDuration}>
                     <XAxis tickLine={false} axisLine={false} dataKey="day" dy={9} stroke="#FFFFFF" />
                     <YAxis hide={true}/>
                     <Tooltip content={data => {

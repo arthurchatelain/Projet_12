@@ -4,9 +4,18 @@ import Dashboard from './Components/Dashboard';
 import SideIcons from './Components/Reusable/SideIcons'
 import { useParams } from "react-router-dom"
 
+/**
+ * Return the App component.
+ * @param {number} params.id - the id of the user that we get from the url
+ */
+
 export default function App () {
+
+    // recuperation of the id frome the url
     let params = useParams()
     let id = params.id
+
+    // return the component
     return (
         <div className="App">
             <header className="header">

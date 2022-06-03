@@ -1,4 +1,8 @@
-// This pie chart function return an svg element that correspond to our needs
+/**
+ * Return an svg PieChart.
+ * @const {number} percentage - The percentage the PieChart will be fill with
+ * @const {number} size - The size of the PieChart
+ */
 
 export default function PieChart (props) {
     const percentage = props.percentage

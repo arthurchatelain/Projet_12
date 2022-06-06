@@ -54,3 +54,21 @@
     justify-content: space-between;
     margin-bottom: 80px;
 }
+
+@media all and (max-width: 1170px) {
+    .dashboard {
+        padding: 40px;
+    }
+    .SideIcons {
+        padding: 12px;
+    }
+    .SideIcon {
+        width: 60px;
+    }
+}
+
+@media all and (max-width: 1070px) {
+    .dashboard {
+        padding: 40px 24px; 
+    }
+}
